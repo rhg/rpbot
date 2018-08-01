@@ -1,0 +1,19 @@
+{
+	"name": "rpbot",
+	"version": "0.1.0",
+	"description": "Bot to manage roleplays on my server.",
+	"main": "bot.js",
+	"author": "Dashed Rainbows",
+	"dependencies": {
+		"discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+		"immutable": "^3.8.2",
+		"jest": "^23.4.2",
+		"winston": "^3.0.0"
+	},
+	"scripts": {
+		"test": "jest --notify"
+	},
+	"jest": {
+		"testEnvironment": "node"
+	}
+}
