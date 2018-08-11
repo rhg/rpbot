@@ -1,3 +1,6 @@
 auth.json
 state.json
 node_modules/
+out/
+bot.js
+.cpcache/
