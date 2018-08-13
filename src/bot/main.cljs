@@ -122,6 +122,14 @@
     (.then (.reply msg "No Character Set")
            #(.delete % 10000))))
 
+(defmethod handle-command "info"
+  [_ _ msg]
+  (.then (.reply msg 
+                 (if-let [char-name (get-in @state [:users msg.author.id])]
+                   (str "Character: " char-name "\nMoney: " (get-in @state [:characters msg.author.id char-name :money]))
+                   "No character set"))
+         #(.delete % 10000)))
+
 (defn dispatch-command [msg]
   (let [[cmd arg] (str/split (subs msg.content 1) #" " 2)]
     (.delete msg 10000)
